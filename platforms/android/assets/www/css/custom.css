@@ -1,0 +1,902 @@
+/*
+ * header
+ */
+
+.lccc-header {
+	background: #252627 !important;
+	border-color: #393b3c !important;
+	color: #fff !important;
+	text-shadow: none !important;
+	border-bottom-width: 0px !important;
+}
+
+.lccc-logo {
+	height: 44px !important;
+	position: absolute !important;
+	left: 45px !important;
+}
+
+.lccc-logo img {
+	display: inline-block !important;
+	vertical-align: middle !important;
+	height: 30px !important;
+}
+
+.lccc-logo .helper {
+	display: inline-block !important;
+	vertical-align: middle !important;
+	height: 100% !important;
+}
+
+.lccc-company {
+	width: 50% !important;
+	margin-left: 90px !important;
+	text-align: left !important;
+}
+
+.lccc-pagetitle {
+	margin: 0 !important;
+	position: absolute;
+	top: 0px !important;
+	right: 0px !important;
+	text-align: right !important;
+	padding-right: 10px !important;
+}
+
+/*
+ * btn
+ */
+
+.lccc-btn {
+	background-color: #d6181f !important;
+	border-color: #d6181f !important;
+	color: #fff !important;
+	text-shadow: none !important;
+	border-top-left-radius: 0 !important;
+	border-top-right-radius: 0 !important;
+	border-bottom-left-radius: 0 !important;
+	border-bottom-right-radius: 0 !important;
+	text-align: left !important;
+	height: 50px !important;
+	line-height: 50px !important;
+	padding: 0 1em !important;
+	margin-top: 1em !important;
+	text-align: center !important;
+}
+
+.lccc-btn:active,
+.lccc-btn.ui-btn-active {
+	background-color: #d5454b !important;
+	border-color: #d5454b !important;
+	color: #fff !important;
+	text-shadow: none !important;
+	padding: 0 1em !important;
+	margin-top: 1em !important;
+	text-align: center !important;	
+}
+
+/*
+ * back btn
+ */
+
+.lccc-back {
+	border-color: #252627 !important;
+	top: 0px !important;
+	left: 0px !important;
+	width: 43px !important;
+	height: 43px !important;
+	margin-top: 0px !important;
+	padding: 0 !important;
+	border: none !important;
+	box-shadow: none !important;
+	background: #252627 !important;
+}
+
+.lccc-back:active {
+	background-color: #d6181f !important;
+	border-top-left-radius: 0px !important;
+	border-top-right-radius: 0px !important;
+	border-bottom-left-radius: 0px !important;
+	border-bottom-right-radius: 0px !important;
+}
+
+.lccc-back span.helper {
+	display: inline-block !important;
+	vertical-align: middle !important;
+	height: 100% !important;
+}
+
+.lccc-back img {
+	display: inline-block !important;
+	vertical-align: middle !important;
+	width: 30px !important;
+}
+
+#popup_save_log,
+#popup_save_review,
+#popup_add_event {
+	max-width: 200px;
+	box-shadow: none;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+/*#popup_add_event div[data-role="header"] {
+	background-color: #6d6e71;
+	text-shadow: none;
+}*/
+
+/*#popup_add_event a {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	background-color: #6d6e71;
+	border-width: 0px;
+	text-shadow: none;
+}*/
+
+/***********
+ * HOME PAGE
+ ***********/
+
+.lccc-drawer {
+	border-color: transparent;
+	top: 0px !important;
+	left: 0px !important;
+	width: 43px !important;
+	height: 43px !important;
+	margin-top: 0px !important;
+	padding: 0 !important;
+	border: none !important;
+	box-shadow: none !important;
+	background: transparent !important;
+}
+
+.lccc-drawer:active {
+	background-color: #d6181f !important;
+	border-top-left-radius: 0px !important;
+	border-top-right-radius: 0px !important;
+	border-bottom-left-radius: 0px !important;
+	border-bottom-right-radius: 0px !important;
+}
+
+.lccc-drawer span.helper {
+	display: inline-block !important;
+	vertical-align: middle !important;
+	height: 100% !important;
+}
+
+.lccc-drawer img {
+	display: inline-block !important;
+	vertical-align: middle !important;
+	width: 30px !important;
+}
+
+
+
+.sync_status {
+	position: absolute !important;
+	bottom: 10px !important;
+}
+
+.sync_value {
+	color: #a6a6a6 !important;
+}
+
+#user_brief .user_name {
+	font-size: 1.5em !important;
+	display: block !important;
+	padding: 10px 0 !important;
+}
+
+#user_brief .user_team {
+	display: block !important;
+	padding: 5px 0 !important;
+}
+
+#user_brief .user_club {
+	display: block !important;
+}
+
+#user_photo {
+	width: 50% !important;
+	height: 100px !important;
+	float: left !important;
+	border: none !important;
+}
+
+#user_photo img {
+	width: 100px !important;
+	height: 100px !important;
+}
+
+#user_brief {
+	display: inline-block !important;
+	width: 50% !important;
+	float: right !important;
+	height: auto !important;
+}
+
+#home_panel li a {
+	line-height: 2em !important;
+	border-radius: 0 !important;
+}
+
+
+#message_board {
+	text-align: center !important;
+	min-height: 300px !important;
+}
+
+#latest_message_list,
+#latest_message_list a {
+	border-top-left-radius: 0 !important;
+	border-top-right-radius: 0 !important;
+	border-bottom-left-radius: 0 !important;
+	border-bottom-right-radius: 0 !important;
+}
+
+/*.message_board_title {
+	width: 100%;
+}*/
+
+
+#main_menus {
+	display: block !important;
+}
+
+#main_menus a[href="#activity_log_page"],
+#main_menus a[href="#review_page-selectgroup"],
+#main_menus a[href="#training_page-selectskill"],
+#main_menus a[href="#criteria_page-selectgroup"],
+#main_menus a[href="#calendar_page"] {
+	background-color: #d6181f !important;
+	border-color: #d6181f !important;
+	color: #fff !important;
+	text-shadow: none !important;
+	border-top-left-radius: 0 !important;
+	border-top-right-radius: 0 !important;
+	border-bottom-left-radius: 0 !important;
+	border-bottom-right-radius: 0 !important;
+	text-align: left !important;
+	height: 70px !important;
+	line-height: 70px !important;
+}
+
+#main_menus a[href="#activity_log_page"] img,
+#main_menus a[href="#review_page-selectgroup"] img,
+#main_menus a[href="#training_page-selectskill"] img,
+#main_menus a[href="#criteria_page-selectgroup"] img,
+#main_menus a[href="#calendar_page"] img {
+	float: left !important;
+	width: 70px !important;
+	vertical-align: middle !important;
+	padding-right: 10px !important;
+}
+
+#main_menus a[href="#activity_log_page"]:active,
+#main_menus a[href="#review_page-selectgroup"]:active,
+#main_menus a[href="#training_page-selectskill"]:active,
+#main_menus a[href="#criteria_page-selectgroup"]:active,
+#main_menus a[href="#calendar_page"]:active {
+	background-color: #d5454b !important;
+	border-color: #d5454b !important;
+	color: #fff !important;
+	text-shadow: none !important;
+}
+
+#main_menus a[href="#activity_log_page"].ui-btn-active,
+#main_menus a[href="#review_page-selectgroup"].ui-btn-active,
+#main_menus a[href="#training_page-selectskill"].ui-btn-active,
+#main_menus a[href="#criteria_page-selectgroup"].ui-btn-active,
+#main_menus a[href="#calendar_page"].ui-btn-active {
+	background-color: #d6181f !important;
+	border-color: #d6181f !important;
+	color: #fff !important;
+	text-shadow: none !important;
+}
+
+#main_menus a[href="#training_page-selectskill"],
+#main_menus a[href="#criteria_page-selectgroup"] {
+	margin-left: 0 !important;
+}
+
+#main_menus a[href="#calendar_page"] {
+	margin-right: 0 !important;
+}
+
+
+
+
+
+
+
+/*#event_details_page span.label {
+	display: block;
+	line-height: 2.em;
+}*/
+
+
+
+
+
+/*******************************
+ * (TRAINING) SELECT SKILL PAGE
+ *******************************/
+
+#training_page div[data-role="content"] {
+	padding-bottom: 0;
+}
+
+#level_progress .current_level {
+	float: left;
+}
+
+#level_progress .next_level {
+	float: right;
+}
+
+#level_progress {
+	min-height: 200px;
+	float: right;
+	width: 100%;
+	margin-top: 1.5em;
+}
+
+#training_date {
+	font-size: 2em;
+	float: right;
+}
+
+#training_date span.value {
+	background-color: #ddd;
+	color: #d6181f;
+	text-shadow: 0 1px 0 #fff;
+	padding: 10px;
+}
+
+#training_list {
+	display: block;
+	float: left;
+	width: 100%;
+	margin-bottom: 0;
+}
+
+#batting_list_wrapper h2 a,
+#bowling_list_wrapper h2 a,
+#fielding_list_wrapper h2 a,
+#others_list_wrapper h2 a {
+	line-height: 3em;
+	padding-left: 1em;
+	padding-right: 1em;
+	background-color: #D6181F;
+	border-color: #fff;
+	color: #fff;
+	text-shadow: none;
+}
+
+#batting_list_wrapper h2 a:active,
+#bowling_list_wrapper h2 a:active,
+#fielding_list_wrapper h2 a:active,
+#others_list_wrapper h2 a:active,
+#batting_list_wrapper h2 a.ui-btn-active,
+#bowling_list_wrapper h2 a.ui-btn-active,
+#fielding_list_wrapper h2 a.ui-btn-active,
+#others_list_wrapper h2 a.ui-btn-active {
+	background-color: #d5454b;
+	border-color: #fff;
+	text-shadow: none;
+	color: #fff;
+}
+
+#batting_list_wrapper h2 a img,
+#bowling_list_wrapper h2 a img,
+#fielding_list_wrapper h2 a img,
+#others_list_wrapper h2 a img {
+	width: 40px;
+	padding-right: 1em;
+	vertical-align: middle;
+}
+
+#batting_list_wrapper h2 a img.forward,
+#bowling_list_wrapper h2 a img.forward,
+#fielding_list_wrapper h2 a img.forward,
+#others_list_wrapper h2 a img.forward {
+	float: right;
+	width: 25px;
+	vertical-align: middle;
+	display: inline-block;
+	padding-left: 0;
+	padding-right: 0;
+	margin-top: 10px;
+}
+
+/****************
+ * TRAINING PAGE
+ ****************/
+
+#tutorial_video_canvas {
+	display: block;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+#tutorial_video_canvas video {
+	/*image-fit: fill;*/
+}
+
+#training_results div.pace, 
+#training_results div.spin,
+#training_results div.score {
+	display: inline-block;
+	width: 30%;
+	float: left;
+	margin-right: 5%;
+}
+
+#training_results div.score {
+	margin-right: 0;
+}
+
+
+
+
+
+
+/****************************
+ * ACTIVITY LOG DETAILS PAGE
+ ****************************/
+
+#activity_log_brief.exercise {
+	display: block;
+	line-height: 1.5em;
+	font-size: 2em;
+}
+
+#activity_log_brief.skill {
+	display: block;
+	line-height: 1.5em;
+	font-size: 1.2em;
+}
+
+#activity_log_brief.logdate {
+	display: block;
+	line-height: 1.5em;
+	/*float: right;
+	position: absolute;
+	display: inline-block;
+	top: 0px;
+	right: 0px;*/
+}
+
+#activity_log_results {
+	margin-top: 1em;
+}
+
+
+
+
+
+
+/******************************
+ * (REVIEW) SELECT TEAM/GROUP
+ ******************************/
+
+#review_page-grouplist li a {
+	line-height: 34px;
+	padding-left: 1em;
+	padding-right: 1em;
+	background-color: #D6181F;
+	border-color: #fff;
+	color: #fff;
+	text-shadow: none;
+}
+
+#review_page-grouplist li a:active,
+#review_page-grouplist li a.ui-btn-active {
+	background-color: #d5454b;
+	border-color: #fff;
+	text-shadow: none;
+	color: #fff;
+}
+
+#review_page-grouplist li a img {
+	width: 40px;
+	padding-right: 1em;
+	vertical-align: middle;
+}
+
+#review_page-grouplist li a img.forward {
+	float: right;
+	width: 25px;
+	vertical-align: middle;
+	display: inline-block;
+	padding-left: 0;
+	padding-right: 0;
+	margin-top: 10px;
+}
+
+/**************************
+ * (REVIEW) SELECT PLAYER
+ **************************/
+
+#review_page-playerlist li a {
+	line-height: 34px;
+	padding-left: 1em;
+	padding-right: 1em;
+	background-color: #D6181F;
+	border-color: #fff;
+	color: #fff;
+	text-shadow: none;
+}
+
+#review_page-playerlist li a:active,
+#review_page-playerlist li a.ui-btn-active {
+	background-color: #d5454b;
+	border-color: #fff;
+	text-shadow: none;
+	color: #fff;
+}
+
+#review_page-playerlist li a img {
+	width: 40px;
+	padding-right: 1em;
+	vertical-align: middle;
+}
+
+#review_page-playerlist li a img.forward {
+	float: right;
+	width: 25px;
+	vertical-align: middle;
+	display: inline-block;
+	padding-left: 0;
+	padding-right: 0;
+	margin-top: 10px;
+}
+
+/**************
+ * REVIEW PAGE
+ **************/
+
+.#review_activity_log_brief.exercise {
+	display: block;
+	line-height: 1.5em;
+}
+
+.#review_activity_log_brief.skill {
+	display: block;
+	line-height: 1.5em;
+}
+
+.#review_activity_log_brief.logdate {
+	display: block;
+	line-height: 1.5em;
+}
+
+#review_activity_log_results {
+	margin-top: 1em;
+}
+
+#open_popup_save_review {
+	background-color: #d6181f;
+	border-color: #d6181f;
+	color: #fff;
+	text-shadow: none;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	text-align: left;
+	height: 50px;
+	line-height: 50px;
+	padding: 0 1em;
+	margin-top: 1em;
+	text-align: center;
+}
+
+#open_popup_save_review:active,
+#open_popup_save_review.ui-btn-active {
+	background-color: #d5454b;
+	border-color: #d5454b;
+	color: #fff;
+	text-shadow: none;
+	padding: 0 1em;
+	margin-top: 1em;
+	text-align: center;	
+}
+
+
+
+
+
+
+/******************************
+ * (CRITERIA) SELECT TEAM/GROUP
+ ******************************/
+
+#criteria_grouplist li a {
+	line-height: 34px;
+	padding-left: 1em;
+	padding-right: 1em;
+	background-color: #D6181F;
+	border-color: #fff;
+	color: #fff;
+	text-shadow: none;
+}
+
+#criteria_grouplist li a:active,
+#criteria_grouplist li a.ui-btn-active {
+	background-color: #d5454b;
+	border-color: #fff;
+	text-shadow: none;
+	color: #fff;
+}
+
+#criteria_grouplist li a img {
+	width: 40px;
+	padding-right: 1em;
+	vertical-align: middle;
+}
+
+#criteria_grouplist li a img.forward {
+	float: right;
+	width: 25px;
+	vertical-align: middle;
+	display: inline-block;
+	padding-left: 0;
+	padding-right: 0;
+	margin-top: 10px;
+}
+
+/*******************
+ * CRITERIA PAGE
+ *******************/
+
+#c_batting_list_wrapper h2 img,
+#c_bowling_list_wrapper h2 img,
+#c_fielding_list_wrapper h2 img,
+#c_others_list_wrapper h2 img {
+	width: 40px;
+	padding-right: 1em;
+	vertical-align: middle;
+}
+
+#c_batting_list_wrapper h2 a,
+#c_bowling_list_wrapper h2 a,
+#c_fielding_list_wrapper h2 a,
+#c_others_list_wrapper h2 a {
+	line-height: 3em;
+	padding-left: 1em;
+	padding-right: 1em;
+	background-color: #D6181F;
+	border-color: #fff;
+	color: #fff;
+	text-shadow: none;
+}
+
+#c_batting_list_wrapper h2 img.forward,
+#c_bowling_list_wrapper h2 img.forward,
+#c_fielding_list_wrapper h2 img.forward,
+#c_others_list_wrapper h2 img.forward {
+	float: right;
+	width: 25px;
+	vertical-align: middle;
+	display: inline-block;
+	padding-left: 0;
+	padding-right: 0;
+	margin-top: 10px;
+}
+
+
+
+
+
+
+/****************
+ * CALENDAR PAGE
+ ****************/
+
+#calendar_page div[data-role="navbar"] li a {
+	border-color: transparent;
+}
+
+#calendar_page div[data-role="navbar"] li a:active,
+#calendar_page div[data-role="navbar"] li a.ui-btn-active {
+	background-color: #D6181F;
+	border-color: transparent;
+	color: #fff;
+	text-shadow: none;
+}
+
+.fc-button {
+	border-top-right-radius: 0;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	border-width: 0;
+	background: #6d6e71;
+	color: #fff;
+	text-shadow: none;
+	box-shadow: none;
+}
+
+.fc-state-default.fc-corner-right,
+.fc-state-default.fc-corner-left {
+	border-top-right-radius: 0;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.fc-state-highlight {
+	background-color: #ffc408;
+	color: #fff;
+	text-shadow: none;
+}
+
+/*#delete_event {
+	background-color: #d6181f;
+	border-color: #d6181f;
+	color: #fff;
+	text-shadow: none;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	text-align: left;
+	height: 50px;
+	line-height: 50px;
+	padding: 0 1em;
+	margin-top: 1em;
+	text-align: center;
+}
+
+#delete_event:active,
+#delete_event.ui-btn-active {
+	background-color: #d5454b;
+	border-color: #d5454b;
+	color: #fff;
+	text-shadow: none;
+	padding: 0 1em;
+	margin-top: 1em;
+	text-align: center;	
+}*/
+
+
+
+
+
+
+/********************
+ * MESSAGE LIST PAGE
+ ********************/
+
+#message_list_page div[data-role=content] {
+	padding: 0;
+}
+
+#message_list {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+#message_list,
+#message_list a {
+	border-radius: 0;
+}
+
+#message_list li[data-role=list-divider] {
+	background-color: #d6181f;
+	line-height: 2em;
+	color: #ffffff;
+	text-shadow: none;
+}
+
+#add_message {
+	border-color: #252627 !important;
+	top: 0px !important;
+	right: 0px;
+	left: 0px;
+	width: 43px !important;
+	height: 43px !important;
+	margin-top: 0px !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+	padding: 0 !important;
+	border: none !important;
+	box-shadow: none !important;
+	background: #252627 !important;
+}
+
+#add_message:active {
+	background-color: #d6181f !important;
+	border-top-left-radius: 0px !important;
+	border-top-right-radius: 0px !important;
+	border-bottom-left-radius: 0px !important;
+	border-bottom-right-radius: 0px !important;
+}
+
+#add_message span.helper {
+	display: inline-block !important;
+	vertical-align: middle !important;
+	height: 100% !important;
+}
+
+#add_message img {
+	display: inline-block !important;
+	vertical-align: middle !important;
+	width: 30px !important;
+}
+
+/***********************
+ * MESSAGE DETAILS PAGE
+ ***********************/
+
+#message_brief span.message_title {
+	display: block;
+	line-height: 1.5em;
+	font-size: 2em;
+}
+
+#message_brief span.message_author {
+	display: block;
+	line-height: 1.5em;
+}
+
+#message_brief span.message_content {
+	display: block;
+	line-height: 1.5em;
+	margin-top: 1em;
+}
+
+#message_brief span.message_time {
+	display: block;
+	line-height: 1.5em;
+}
+
+/**********************
+ * CREATE MESSAGE PAGE
+ **********************/
+
+#save_message {
+	background-color: #d6181f;
+	border-color: #d6181f;
+	color: #fff;
+	text-shadow: none;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	text-align: left;
+	height: 50px;
+	line-height: 50px;
+	padding: 0 1em;
+	margin-top: 1em;
+	text-align: center;
+}
+
+#save_message:active,
+#save_message.ui-btn-active {
+	background-color: #d5454b;
+	border-color: #d5454b;
+	color: #fff;
+	text-shadow: none;
+	padding: 0 1em;
+	margin-top: 1em;
+	text-align: center;	
+}
+
+
+
+
+
+
+
+
+/* fix */
+input {
+    /*-webkit-user-select: auto !important;*/
+}

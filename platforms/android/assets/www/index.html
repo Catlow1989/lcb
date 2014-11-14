@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <!-- <meta name="viewport" content="initial-scale=1, width=device-width, target-densitydpi=medium-dpi" /> -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.1.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/fullcalendar.css" />
+        <link rel="stylesheet" type="text/css" href="css/custom.css" />
+        <title>Lancashire Cricket Board</title>
+    </head>
+    <body>
+    	
+    	<!-- INVISIBLE PAGE -->
+    	<div data-role="page" id="invisible_page"></div>
+    	
+    	<!-- HOME PAGE -->
+        <div data-role="page" id="home_page">
+        	
+        	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="" class="lccc-header">
+        		<a href="#home_panel" class="lccc-drawer"><span class="helper"></span><img src="img/drawer_w.png" /></a>
+        		<div class="lccc-logo"><span class="helper"></span></span><img src="img/lccc_logo.png" /></div>
+        		<h2 class="lccc-company">LCCC</h2>
+        	</div>
+        	
+        	<div data-role="content">
+        		<div id="message_board">
+        			<a href="#message_list_page">Message Board</a><!-- <span class="message_board_title">Message Board</span> -->
+        			<ul id="latest_message_list" data-role="listview" data-inset="true" data-shadow="false"></ul>
+        		</div>
+        		<div id="main_menus">
+        			<fieldset class="ui-grid-a" id="main_menu_row_1">
+        				<a href="#activity_log_page" data-role="button" data-shadow="false" style="display: none;"><img src="img/activity_log.png" />Activity Log</a>
+        				<a href="#review_page-selectgroup" data-role="button" data-shadow="false" style="display: none;"><img src="img/activity_log.png" />Review</a>
+        			</fieldset>
+					<fieldset class="ui-grid-a" id="main_menu_row_2">
+					    <div class="ui-block-a">
+					    	<a href="#training_page-selectskill" data-role="button" data-shadow="false" style="display: none;"><img src="img/ball.png" />Training</a>
+					    	<a href="#criteria_page-selectgroup" data-role="button" data-shadow="false" style="display: none;"><img src="img/certificate.png" />Criteria</a>
+					    </div>
+					    <div class="ui-block-b">
+					    	<a href="#calendar_page" data-role="button" data-shadow="false"><img src="img/calendar.png" />Schedules</a>
+					    </div>
+					</fieldset>
+        		</div>
+        	</div>
+        	
+        	<div data-role="panel" id="home_panel" data-position="left" data-display="overlay" data-theme="b">
+			    <ul data-role="listview" data-icon="false">
+			    	<li data-role="list-divider" style="display: none;">
+                        <div id="user_photo">
+                            <img src="img/photo.png" />
+                        </div>
+                        <div id="user_brief">
+                            <span class="user_name"></span>
+                            <span class="user_team"></span>
+                            <span class="user_club"></span>
+                        </div>
+                    </li>
+                    <li id="login_form">
+                    	<input type="text" name="username" id="login_username" value="kevin" placeholder="Username" />
+                    	<input type="password" name="password" id="login_password" value="12345" placeholder="Password" />
+                    </li>
+                    <li><a href="#" data-role="button" data-shadow="false" id="user_login">Login</a></li>
+                    <li><a href="#" data-role="button" data-shadow="false" id="user_logout" style="display: none;">Logout</a></li>
+                    <li><a href="#" data-role="button" data-shadow="false" id="sync_data" style="display: none;">Sync data</a></li>
+			    </ul>
+			    <div class="sync_status">
+			    	Last sync: <span class="sync_value"></span>
+			    </div>
+			</div>
+			
+        </div>
+        
+        
+        
+        <!-- (TRAINING) SELECT SKILL PAGE -->
+        <div data-role="page" id="training_page-selectskill">
+        	
+        	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="" class="lccc-header">
+        		<a href="#" data-rel="back" class="lccc-back"><span class="helper"></span><img src="img/back_w.png" /></a>
+        		<div class="lccc-logo"><span class="helper"></span><img src="img/lccc_logo.png" /></div>
+        		<h2 class="lccc-company">LCCC</h2>
+        		<h2 class="lccc-pagetitle">Training</h2>
+        	</div>
+        	
+        	<div data-role="content">
+        		<div id="training_date"><span class="value"></span></div>
+        		<div id="level_progress">
+        			<div>
+        				<span class="current_level">LEVEL 1</span>
+        				<span class="next_level">LEVEL 2</span>
+        			</div>
+        			<div class="progress_bar"></div>
+        		</div>
+        		<div data-role="collapsibleset" id="training_list" data-corners="false" data-inset="false">
+					<div data-role="collapsible" id="batting_list_wrapper" data-iconpos="right">
+						<h2><img src="img/helmet.png" />Batting<img class="forward" src="img/forward_w.png" /></h2>
+						<span class="exercise_guid" style="display: none;"></span>
+						<ul data-role="listview" id="batting_list"></ul>
+					</div>
+					<div data-role="collapsible" id="bowling_list_wrapper" data-iconpos="right">
+						<h2><img src="img/helmet.png" />Bowling<img class="forward" src="img/forward_w.png" /></h2>
+						<span class="exercise_guid" style="display: none;"></span>
+						<ul data-role="listview" id="bowling_list"></ul>
+					</div>
+					<div data-role="collapsible" id="fielding_list_wrapper" data-iconpos="right">
+						<h2><img src="img/helmet.png" />Fielding<img class="forward" src="img/forward_w.png" /></h2>
+						<span class="exercise_guid" style="display: none;"></span>
+						<ul data-role="listview" id="fielding_list"></ul>
+					</div>
+					<div data-role="collapsible" id="others_list_wrapper" data-iconpos="right">
+						<h2><img src="img/helmet.png" />Performance character traits<img class="forward" src="img/forward_w.png" /></h2>
+						<span class="exercise_guid" style="display: none;"></span>
+						<ul data-role="listview" id="others_list"></ul>
+					</div>
+				</div>
+        	</div>
+        	
+        </div>
+        
+        <!-- TRAINING PAGE -->
+        <div data-role="page" id="training_page">
+        	
+        	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="" class="lccc-header">
+        		<a href="#" data-rel="back" class="lccc-back"><span class="helper"></span><img src="img/back_w.png" /></a>
+        		<div class="lccc-logo"><span class="helper"></span><img src="img/lccc_logo.png" /></div>
+        		<h2 class="lccc-company">LCCC</h2>
+        		<h2 class="lccc-pagetitle">Skill</h2>
+        	</div>
+        	
+        	<div data-role="content">
+        		<h2 id="skill_title"></h2>
+        		<div id="tutorial_video_canvas">
+        			<video width="320" height="240" controls>
+					 	<source src="http://leisuremobile.com/video.mp4" type="video/mp4">
+					</video>
+        		</div>
+        		<div id="training_results">
+        			<div class="pace">
+	        			<label for="pace">Pace: </label>
+	        			<input type="text" name="pace" value="" />
+	        		</div>
+        			<div class="spin">
+	        			<label for="spin">Spin: </label>
+	        			<input type="text" name="spin" value="" />
+        			</div>
+        			<div class="score">
+	        			<label for="score">Score: </label>
+	        			<input type="text" name="score" value="" />
+	        		</div>
+	        		<div class="notes">
+	        			<label for="notes">Notes: </label>
+	        			<textarea cols="40" rows="16" name="notes"></textarea>
+	        		</div>
+        		</div>
+        		
+        		<a href="#popup_save_log" data-rel="popup" data-role="button" data-shadow="false" data-position-to="#tutorial_video_canvas" class="lccc-btn" id="open_popup_save_log">Save activity log</a>
+        	</div>
+        	
+        	<div data-role="popup" id="popup_save_log">
+        		<div data-role="header" data-theme="b">
+			    	<h1>Save log?</h1>
+			    </div>
+    			<div role="main" class="ui-content">
+    				<p>New activity log on <span class="date"></span>?</p>
+    				<a href="#" class="ui-btn ui-btn-inline" class="lccc-btn" id="save_log">Yes</a>
+    				<a href="#" class="ui-btn ui-btn-inline" data-rel="back">Cancel</a>
+    			</div>
+    		</div>
+    		
+        </div>
+        
+        
+        
+        <!-- ACTIVITY LOG PAGE -->
+        <div data-role="page" id="activity_log_page">
+        	
+        	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="" class="lccc-header">
+        		<a href="#" data-rel="back" class="lccc-back"><span class="helper"></span><img src="img/back_w.png" /></a>
+        		<div class="lccc-logo"><span class="helper"></span><img src="img/lccc_logo.png" /></div>
+        		<h2 class="lccc-company">LCCC</h2>
+        		<h2 class="lccc-pagetitle">Activity Log</h2>
+        	</div>
+        	
+        	<div data-role="content">
+        		<ul data-role="listview" id="activity_log_list"></ul>
+        	</div>
+        	
+        </div>
+        
+        <!-- ACTIVITY LOG DETAILS PAGE -->
+        <div data-role="page" id="activity_log_page-details">
+        	
+        	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="" class="lccc-header">
+        		<a href="#" data-rel="back" class="lccc-back"><span class="helper"></span><img src="img/back_w.png" /></a>
+        		<div class="lccc-logo"><span class="helper"></span><img src="img/lccc_logo.png" /></div>
+        		<h2 class="lccc-company">LCCC</h2>
+        		<h2 class="lccc-pagetitle">Activity Log Details</h2>
+        	</div>
+        	
+        	<div data-role="content">
+        		<div id="activity_log_brief">
+        			<!-- <h2 class="log_number"></h2> -->
+	        		<span class="exercise"></span>
+	        		<span class="skill"></span>
+	        		<span class="logdate"></span>
+        		</div>
+        		
+        		<div id="activity_log_results">
+        			<div class="pace">
+	        			<label for="pace">Pace: </label>
+	        			<input type="text" name="pace" value="" disabled />
+	        		</div>
+        			<div class="spin">
+	        			<label for="spin">Spin: </label>
+	        			<input type="text" name="spin" value="" disabled />
+        			</div>
+        			<div class="score">
+	        			<label for="score">Score: </label>
+	        			<input type="text" name="score" value="" disabled />
+	        		</div>
+	        		<div class="notes">
+	        			<label for="notes">Notes: </label>
+	        			<textarea cols="40" rows="8" name="notes" disabled ></textarea>
+	        		</div>
+	        		<div class="comments">
+	        			<label for="comments">Comments: </label>
+	        			<textarea cols="40" rows="8" name="comments" disabled ></textarea>
+	        		</div>
+        		</div>
+        	</div>
+        	
+        </div>
+        
+        
+        
+        <!-- (REVIEW) SELECT TEAM/GROUP -->
+        <div data-role="page" id="review_page-selectgroup">
+        	
+        	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="" class="lccc-header">
+        		<a href="#" data-rel="back" class="lccc-back"><span class="helper"></span><img src="img/back_w.png" /></a>
+        		<div class="lccc-logo"><span class="helper"></span><img src="img/lccc_logo.png" /></div>
+        		<h2 class="lccc-company">LCCC</h2>
+        		<h2 class="lccc-pagetitle">Select a group (review)</h2>
+        	</div>
+        	
+        	<div data-role="content">
+        		<ul data-role="listview" id="review_page-grouplist"></ul>
+        	</div>
+        	
+        </div>
+        
+        <!-- (REVIEW) SELECT PLAYER -->
+        <div data-role="page" id="review_page-selectplayer">
+        	
+        	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="" class="lccc-header">
+        		<a href="#" data-rel="back" class="lccc-back"><span class="helper"></span><img src="img/back_w.png" /></a>
+        		<div class="lccc-logo"><span class="helper"></span><img src="img/lccc_logo.png" /></div>
+        		<h2 class="lccc-company">LCCC</h2>
+        		<h2 class="lccc-pagetitle">Select a player (review)</h2>
+        	</div>
+        	
+        	<div data-role="content">
+        		<ul data-role="listview" id="review_page-playerlist"></ul>
+        	</div>
+        	
+        </div>
+        
+        <!-- (REVIEW) SELECT LOG -->
+        <div data-role="page" id="review_page-selectlog">
+        	
+        	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="" class="lccc-header">
+        		<a href="#" data-rel="back" class="lccc-back"><span class="helper"></span><img src="img/back_w.png" /></a>
+        		<div class="lccc-logo"><span class="helper"></span><img src="img/lccc_logo.png" /></div>
+        		<h2 class="lccc-company">LCCC</h2>
+        		<h2 class="lccc-pagetitle">Activity history</h2>
+        	</div>
+        	
+        	<div data-role="content">
+        		<ul data-role="listview" id="review_page-activityloglist"></ul>
+        	</div>
+        	
+        </div>
+        
+        <!-- REVIEW PAGE -->
+        <div data-role="page" id="review_page">
+        	
+        	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="" class="lccc-header">
+        		<a href="#" data-rel="back" class="lccc-back"><span class="helper"></span><img src="img/back_w.png" /></a>
+        		<div class="lccc-logo"><span class="helper"></span><img src="img/lccc_logo.png" /></div>
+        		<h2 class="lccc-company">LCCC</h2>
+        		<h2 class="lccc-pagetitle">Review</h2>
+        	</div>
+        	
+        	<div data-role="content">
+        		<div id="review_activity_log_brief">
+	        		<span class="exercise"></span>
+	        		<span class="skill"></span>
+	        		<span class="logdate"></span>
+        		</div>
+        		<div id="review_activity_log_results">
+        			<div class="pace">
+	        			<label for="pace">Pace: </label>
+	        			<input type="text" name="pace" value="" disabled />
+	        		</div>
+        			<div class="pace">
+	        			<label for="spin">Spin: </label>
+	        			<input type="text" name="spin" value="" disabled />
+        			</div>
+        			<div class="score">
+	        			<label for="score">Score: </label>
+	        			<input type="text" name="score" value="" disabled />
+	        		</div>
+	        		<div class="notes">
+	        			<label for="notes">Notes: </label>
+	        			<textarea cols="40" rows="8" name="notes" disabled ></textarea>
+	        		</div>
+	        		<div class="comments">
+	        			<label for="comments">Comments: </label>
+	        			<textarea cols="40" rows="8" name="comments" ></textarea>
+	        		</div>
+	        		
+	        		<a href="#popup_save_review" data-role="button" data-shadow="false" data-rel="popup" data-position-to="window" class="lccc-btn" id="open_popup_save_review">Save review</a>
+        		</div>
+        	</div>
+        	
+        	<div data-role="popup" id="popup_save_review">
+        		<div data-role="header" data-theme="b">
+			    	<h1>Save review?</h1>
+			    </div>
+    			<div role="main" class="ui-content">
+    				<p>New review on <span class="date"></span>?</p>
+    				<a href="#" class="ui-btn ui-btn-inline" class="lccc-btn" id="save_review">Yes</a>
+    				<a href="#" class="ui-btn ui-btn-inline" data-rel="back">Cancel</a>
+    			</div>
+    		</div>
+        	
+        </div>
+        
+        
+        
+        <!-- (CRITERIA) SELECT TEAM/GROUP -->
+        <div data-role="page" id="criteria_page-selectgroup">
+        	
+        	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="" class="lccc-header">
+        		<a href="#" data-rel="back" class="lccc-back"><span class="helper"></span><img src="img/back_w.png" /></a>
+        		<div class="lccc-logo"><span class="helper"></span><img src="img/lccc_logo.png" /></div>
+        		<h2 class="lccc-company">LCCC</h2>
+        		<h2 class="lccc-pagetitle">Select a group (criteria)</h2>
+        	</div>
+        	
+        	<div data-role="content">
+        		<ul data-role="listview" id="criteria_grouplist"></ul>
+        	</div>
+        	
+        </div>
+        
+        <!-- CRITERIA PAGE -->
+        <div data-role="page" id="criteria_page">
+        	
+        	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="" class="lccc-header">
+        		<a href="#" data-rel="back" class="lccc-back" id="btn_back_criteria"><span class="helper"></span><img src="img/back_w.png" /></a>
+        		<div class="lccc-logo"><span class="helper"></span><img src="img/lccc_logo.png" /></div>
+        		<h2 class="lccc-company">LCCC</h2>
+        		<h2 class="lccc-pagetitle">Criteria</h2>
+        	</div>
+        	
+        	<div data-role="content">
+        		<h2 class="team_title"></h2>
+        		<div data-role="collapsibleset" id="criteria_list" data-corners="false" data-inset="false">
+					<div data-role="collapsible" id="c_batting_list_wrapper" data-iconpos="right">
+						<h2><img src="img/helmet.png" />Batting<img class="forward" src="img/forward_w.png" /></h2>
+						<!-- <ul data-role="listview" id="c_batting_list"></ul> -->
+						<fieldset data-role="controlgroup" id="c_batting_list"></fieldset>
+					</div>
+					<div data-role="collapsible" id="c_bowling_list_wrapper" data-iconpos="right">
+						<h2><img src="img/helmet.png" />Bowling<img class="forward" src="img/forward_w.png" /></h2>
+						<!-- <ul data-role="listview" id="c_bowling_list"></ul> -->
+						<fieldset data-role="controlgroup" id="c_bowling_list"></fieldset>
+					</div>
+					<div data-role="collapsible" id="c_fielding_list_wrapper" data-iconpos="right">
+						<h2><img src="img/helmet.png" />Fielding<img class="forward" src="img/forward_w.png" /></h2>
+						<!-- <ul data-role="listview" id="c_fielding_list"></ul> -->
+						<fieldset data-role="controlgroup" id="c_fielding_list"></fieldset>
+					</div>
+					<div data-role="collapsible" id="c_others_list_wrapper" data-iconpos="right">
+						<h2><img src="img/helmet.png" />Performance character traits<img class="forward" src="img/forward_w.png" /></h2>
+						<!-- <ul data-role="listview" id="c_others_list"></ul> -->
+						<fieldset data-role="controlgroup" id="c_others_list"></fieldset>
+					</div>
+				</div>
+        	</div>
+        	
+        </div>
+        
+        
+        
+        <!-- CALENDAR PAGE -->
+        <div data-role="page" id="calendar_page">
+        	
+        	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="" class="lccc-header">
+        		<a href="#" data-rel="back" class="lccc-back"><span class="helper"></span><img src="img/back_w.png" /></a>
+        		<div class="lccc-logo"><span class="helper"></span><img src="img/lccc_logo.png" /></div>
+        		<h2 class="lccc-company">LCCC</h2>
+        		<h2 class="lccc-pagetitle">Schedules</h2>
+        		<div data-role="navbar">
+        			<ul>
+        				<li><a href="#" class="epp_cal">EPP Calendar</a></li>
+        				<li><a href="#" class="per_cal">Personal Calendar</a></li>
+        			</ul>
+        		</div>
+        	</div>
+        	
+        	<div data-role="content">
+        		<div id="calendar"></div>
+        	</div>
+        	
+        	<div data-role="popup" id="popup_add_event" data-dismissible="false" data-shadow="false">
+			    <div data-role="header" data-theme="b">
+			    	<h1>Add Event?</h1>
+			    </div>
+			    <div role="main" class="ui-content">
+			    	<p>New event on <span class="date"></span></p>
+			        <a href="#" class="ui-btn ui-corner-all ui-btn-inline ui-btn-b" id="change_page_to_addevent">Yes</a>
+			        <a href="#" class="ui-btn ui-corner-all ui-btn-inline ui-btn-b" id="close_popup_add_event">Cancel</a>
+			    </div>
+			</div>
+			
+        </div>
+        
+        <!-- EVENTS PAGE -->
+        <div data-role="page" id="calendar_page-eventdetails">
+        	
+        	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="" class="lccc-header">
+        		<a href="#" data-rel="back" class="lccc-back"><span class="helper"></span><img src="img/back_w.png" /></a>
+        		<div class="lccc-logo"><span class="helper"></span><img src="img/lccc_logo.png" /></div>
+        		<h2 class="lccc-company">LCCC</h2>
+        		<h2 class="lccc-pagetitle">Event</h2>
+        	</div>
+        	
+        	<div data-role="content">
+        		<div>
+        			<h2><span class="c_event_date"></span></h2>
+        		</div>
+        		<div>
+				    <!-- <label for="event_title">Title</label> -->
+				    <input type="text" name="event_title" id="c_event_title" value="" placeholder="Event name" disabled>
+				    <!-- <label for="event_location">Location</label> -->
+				    <input type="text" name="event_location" id="c_event_location" value="" placeholder="Location" disabled>
+				    <form>
+				    	<legend>From</legend>
+				    	<fieldset data-role="controlgroup" data-type="horizontal">
+				    		<select name="select_fromtime" id="c_select_fromtime" disabled>
+				    			<option value="#">1:00</option>
+				    			<option value="#">2:00</option>
+				    			<option value="#">3:00</option>
+				    			<option value="#">4:00</option>
+				    			<option value="#">5:00</option>
+				    			<option value="#">6:00</option>
+				    			<option value="#">7:00</option>
+				    			<option value="#">8:00</option>
+				    			<option value="#">9:00</option>
+				    			<option value="#">10:00</option>
+				    			<option value="#">11:00</option>
+				    			<option value="#">12:00</option>
+				    		</select>
+				    		<select name="select_fromampm" id="c_select_fromampm" disabled>
+				    			<option value="am">AM</option>
+				    			<option value="pm">PM</option>
+				    		</select>
+				    	</fieldset>
+				    </form>
+				    <form>
+				    	<legend>To</legend>
+				    	<fieldset data-role="controlgroup" data-type="horizontal">
+				    		<select name="select_totime" id="c_select_totime" disabled>
+				    			<option value="#">1:00</option>
+				    			<option value="#">2:00</option>
+				    			<option value="#">3:00</option>
+				    			<option value="#">4:00</option>
+				    			<option value="#">5:00</option>
+				    			<option value="#">6:00</option>
+				    			<option value="#">7:00</option>
+				    			<option value="#">8:00</option>
+				    			<option value="#">9:00</option>
+				    			<option value="#">10:00</option>
+				    			<option value="#">11:00</option>
+				    			<option value="#">12:00</option>
+				    		</select>
+				    		<select name="select_toampm" id="c_select_tpampm" disabled>
+				    			<option value="am">AM</option>
+				    			<option value="pm">PM</option>
+				    		</select>
+				    	</fieldset>
+				    </form>
+					<label for="event_notes">Description</label>
+					<textarea cols="40" rows="8" name="textarea" id="c_event_notes" disabled></textarea>
+				</div>
+				<!-- <div data-role="controlgroup" data-type="horizontal">
+					<a href="#" data-role="button" id="save_event">Save</a>
+	        		<a href="#" data-role="button" id="delete_event">Delete event</a>
+				</div> -->
+        	</div>
+        	
+        </div>
+        
+        <!-- ADD EVENT PAGE -->
+        <div data-role="page" id="calendar_page-addevent">
+        	
+        	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="" class="lccc-header">
+        		<a href="#" data-rel="back" class="lccc-back"><span class="helper"></span><img src="img/back_w.png" /></a>
+        		<div class="lccc-logo"><span class="helper"></span><img src="img/lccc_logo.png" /></div>
+        		<h2 class="lccc-company">LCCC</h2>
+        		<h2 class="lccc-pagetitle">New event</h2>
+        	</div>
+        	
+        	<div data-role="content">
+        		<div>
+        			<h2><span class="event_date"></span></h2>
+        		</div>
+        		<div>
+				    <!-- <label for="event_title">Event name</label> -->
+				    <input type="text" name="event_title" id="event_title" value="" placeholder="Event name">
+				    <!-- <label for="event_location">Location</label> -->
+				    <input type="text" name="event_location" id="event_location" value="" placeholder="Location">
+				    <form>
+				    	<legend>From</legend>
+				    	<fieldset data-role="controlgroup" data-type="horizontal">
+				    		<select name="select_fromtime" id="select_fromtime">
+				    			<option value="1">1:00</option>
+				    			<option value="2">2:00</option>
+				    			<option value="3">3:00</option>
+				    			<option value="4">4:00</option>
+				    			<option value="5">5:00</option>
+				    			<option value="6">6:00</option>
+				    			<option value="7">7:00</option>
+				    			<option value="8">8:00</option>
+				    			<option value="9">9:00</option>
+				    			<option value="10">10:00</option>
+				    			<option value="11">11:00</option>
+				    			<option value="12">12:00</option>
+				    		</select>
+				    		<select name="select_fromampm" id="select_fromampm">
+				    			<option value="am">AM</option>
+				    			<option value="pm">PM</option>
+				    		</select>
+				    	</fieldset>
+				    </form>
+				    <form>
+				    	<legend>To</legend>
+				    	<fieldset data-role="controlgroup" data-type="horizontal">
+				    		<select name="select_totime" id="select_totime">
+				    			<option value="1">1:00</option>
+				    			<option value="2">2:00</option>
+				    			<option value="3">3:00</option>
+				    			<option value="4">4:00</option>
+				    			<option value="5">5:00</option>
+				    			<option value="6">6:00</option>
+				    			<option value="7">7:00</option>
+				    			<option value="8">8:00</option>
+				    			<option value="9">9:00</option>
+				    			<option value="10">10:00</option>
+				    			<option value="11">11:00</option>
+				    			<option value="12">12:00</option>
+				    		</select>
+				    		<select name="select_toampm" id="select_toampm">
+				    			<option value="am">AM</option>
+				    			<option value="pm">PM</option>
+				    		</select>
+				    	</fieldset>
+				    </form>
+					<label for="event_notes">Description</label>
+					<textarea cols="40" rows="15" name="textarea" id="event_notes"></textarea>
+					
+					<a href="#" data-role="button" data-shadow="false" class="lccc-btn" id="save_event">Save new event</a>
+				</div>
+        	</div>
+        	
+        </div>
+        
+        
+        
+        <!-- MESSAGE LIST PAGE -->
+        <div data-role="page" id="message_list_page">
+        	
+        	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="" class="lccc-header">
+        		<a href="#" class="lccc-back" id="btn_goback_message_list"><span class="helper"></span><img src="img/back_w.png" /></a>
+        		<div class="lccc-logo"><span class="helper"></span><img src="img/lccc_logo.png" /></div>
+        		<h2 class="lccc-company">LCCC</h2>
+        		<a href="#message_page-create" id="add_message" style="display: none;"><span class="helper"></span><img src="img/plus_w.png" /></a>
+        		<h2 class="lccc-pagetitle">Message Board</h2>
+        	</div>
+        	
+        	<div data-role="content">
+        		<!-- <div id="message_board"> -->
+        			<ul id="message_list" data-role="listview" data-inset="true" data-shadow="false"></ul>
+        		<!-- </div> -->
+        	</div>
+        	
+        </div>
+        
+        <!-- MESSAGE DETAILS PAGE -->
+        <div data-role="page" id="message_page-details">
+        	
+        	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="" class="lccc-header">
+        		<a href="#" data-rel="back" class="lccc-back"><span class="helper"></span><img src="img/back_w.png" /></a>
+        		<div class="lccc-logo"><span class="helper"></span><img src="img/lccc_logo.png" /></div>
+        		<h2 class="lccc-company">LCCC</h2>
+        		<h2 class="lccc-pagetitle">Message details</h2>
+        	</div>
+        	
+        	<div data-role="content">
+        		<div id="message_brief">
+        			<span class="message_title"></span>
+	        		<span class="message_time"></span>
+	        		<span class="message_author"></span>
+	        		<span class="message_content"></span>
+        		</div>
+        	</div>
+        	
+        </div>
+        
+        <!-- CREATE MESSAGE PAGE -->
+        <div data-role="page" id="message_page-create">
+        	
+        	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="" class="lccc-header">
+        		<a href="#" data-rel="back" class="lccc-back"><span class="helper"></span><img src="img/back_w.png" /></a>
+        		<div class="lccc-logo"><span class="helper"></span><img src="img/lccc_logo.png" /></div>
+        		<h2 class="lccc-company">LCCC</h2>
+        		<h2 class="lccc-pagetitle">New message</h2>
+        	</div>
+        	
+        	<div data-role="content">
+        		<form>
+        			<label for="message_create_title">Title</label>
+        			<input type="text" name="message_create_title" value="" placeholde="" id="message_create_title" />
+        			<label for="message_create_content">Content</label>
+        			<textarea cols="40" rows="15" name="message_create_content" id="message_create_content"></textarea>
+        		</form>
+        		<a href="#" data-role="button" data-shadow="false" id="save_message">Save message</a>
+        	</div>
+        	
+        </div>
+        
+        
+
+
+
+
+        
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/libs/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="js/libs/jquery.mobile-1.4.1.min.js"></script>
+        <script type="text/javascript" src="js/libs/fastclick.js"></script>
+        <script type="text/javascript" src="js/libs/moment-with-langs.js"></script>
+        <script type="text/javascript" src="js/libs/fullcalendar.js"></script>
+        <script type="text/javascript" src="js/preference/Preferences.js"></script>
+        <script type="text/javascript" src="js/util/Utils.js"></script>
+        <script type="text/javascript" src="js/database/Database.js"></script>
+        <script type="text/javascript" src="js/calendarevent/CalendarHandler.js"></script>
+        <script type="text/javascript" src="js/calendarevent/EventsHandler.js"></script>
+        
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/rest/RestAgent.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
+</html>
